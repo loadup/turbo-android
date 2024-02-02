@@ -59,7 +59,9 @@ object TurboHttpClient {
         }
 
         if (Turbo.config.debugLoggingEnabled) {
-            builder.addInterceptor(loggingInterceptor)
+            loggingInterceptor?.let {
+                builder.addInterceptor(it)
+            }
         }
 
         return builder.build()
