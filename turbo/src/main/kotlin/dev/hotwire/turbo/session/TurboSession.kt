@@ -137,7 +137,7 @@ class TurboSession internal constructor(
 
         when {
             isColdBooting -> visitPending = true
-            isReady -> visitLocation(visit)
+            isReady -> visitLocationAsColdBoot(visit)
             else -> visitLocationAsColdBoot(visit)
         }
     }
